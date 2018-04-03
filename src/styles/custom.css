@@ -7,3 +7,21 @@ body{
     border-color: lightgrey;
     padding: 20px 20px 20px 20px;
 }
+
+.items-list-div{
+    border-style: solid;
+    padding: 10px 10px 60px 10px;
+    border-color: lightgrey;
+}
+
+.btn-primary.disabled, .btn-primary:disabled {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    cursor: not-allowed;
+}
+
+.badge-style{
+    margin-top: 10px;
+    float: right;
+}

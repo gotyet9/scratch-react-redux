@@ -2,6 +2,21 @@ import React, { Component } from 'react';
 import { Table } from 'reactstrap';
 
 class ItemsList extends Component {
+
+  renderItems() {
+    return this.props.items.map(item => {
+      let total=(item.price * item.qty).toFixed(2)
+      return (
+        <tr key={item.product+item.price}>
+          <td>{item.product}</td>
+          <td>{item.qty}</td>
+          <td>{item.price}</td>
+          <th scope="row">${total}</th>
+        </tr>
+      )
+    })
+  }
+
   render() {
     return (
       <Table responsive hover bordered>
@@ -14,12 +29,7 @@ class ItemsList extends Component {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Dummy product</td>
-            <td>Dummy quantity</td>
-            <td>Dummy price</td>
-            <th scope="row">Dummy total</th>
-          </tr>
+          {this.renderItems()}
         </tbody>
       </Table>
     );
